@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      body{
+          background-color: rgb(0, 0, 0);
+      }
          #sun{
             position: absolute;
             width: 70px;
@@ -22,7 +25,7 @@
             height: 129px;
             left: 44.8%;
             top: 40.5%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 65px;
            
         }
@@ -33,7 +36,7 @@
             height: 187px;
             left: 42.8%;
             top: 36.1%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 178px;
         }
         #orbit3{
@@ -43,7 +46,7 @@
             height: 249px;
             left: 40.7%;
             top: 31.5%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 178px;
         }
         #orbit4{
@@ -53,7 +56,7 @@
             height: 299px;
             left: 38.9%;
             top: 28%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 178px;
         }
         #orbit5{
@@ -63,7 +66,7 @@
             height: 399px;
             left: 35.4%;
             top: 20.6%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 208px;
         }
         #orbit6{
@@ -72,7 +75,7 @@
             height: 479px;
             left: 32.65%;
             top: 14.9%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 298px;
         }
         #orbit7{
@@ -81,7 +84,7 @@
             height: 569px;
             left: 29.5%;
             top: 8.2%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 298px;
         }
         #orbit8{
@@ -90,7 +93,7 @@
             height: 643px;
             left: 27%;
             top: 2.5%;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 348px;
         }
         #mars{
@@ -99,7 +102,7 @@
             height: 20px;
             left: 17%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(104, 6, 6);
         }
         #mercury{
             position: absolute;
@@ -107,7 +110,7 @@
             height: 15px;
             left: 5%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(85, 57, 47);
         }
         #venus{
             position: absolute;
@@ -116,7 +119,7 @@
             top: 80%;
             left: 19%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(128, 72, 8);
         }
         #earth{
             position: absolute;
@@ -125,7 +128,7 @@
             top: 80%;
             left: 19%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(3, 90, 141);
         }
         #uranus{
             position: absolute;
@@ -134,7 +137,7 @@
             top: 80%;
             left: 11%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(6, 251, 198);
         }
         #neptune{
             position: absolute;
@@ -143,7 +146,7 @@
             top: 50%;
             left: -2%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(21, 72, 102);
         }
         #jupiter{
             position: absolute;
@@ -152,7 +155,7 @@
             top: 80%;
             left: 16.2%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(223, 172, 90);
         }
         #ring{
             position: absolute;
@@ -161,7 +164,7 @@
             top: -53%;
             left: -18.2%;
             border-radius: 50px;
-          border: 2px solid black;
+          border: 2px solid rgb(255, 102, 0);
         }
         #saturn{
             position: absolute;
@@ -170,7 +173,24 @@
             top: 80%;
             left: 11.8%;
             border-radius: 50px;
-            background-color: black;
+            background-color: rgb(184, 117, 11);
+        }
+        #strip1{
+            position: absolute;
+            width: 64px;
+            height: 10px;
+            left: 1.5%;
+            background: rgb(161, 10, 10);
+            border-radius: 10px;
+        }
+        #strip2{
+            position: absolute;
+            width: 64px;
+            height: 10px;
+            left: 3%;
+            top: 35%;
+            background: rgb(133, 4, 4);
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -193,6 +213,8 @@
     <p id="neptune"></p>
     <p id="uranus"></p>
     <p id="ring"></p>
+    <p id="strip1"></p>
+    <p id="strip2"></p>
 </body>
 <script>
     let orbit1 = document.getElementById("orbit1");
@@ -212,6 +234,8 @@
     let uranus = document.getElementById("uranus");
     let neptune = document.getElementById("neptune");
     let ring = document.getElementById("ring");
+    let strip1 = document.getElementById("strip1");
+    let strip2 = document.getElementById("strip2");
     orbit1.append(mercury);
     orbit2.append(venus);
     orbit3.append(earth);
@@ -221,6 +245,8 @@
     orbit7.append(uranus);
     orbit8.append(neptune);
     saturn.append(ring)
+    jupiter.append(strip1);
+    jupiter.append(strip2);
     let rotate = 0;
     let rotate2 = 0;
     let rotate3 = 0;
@@ -255,7 +281,7 @@
        orbit6.style.transform = "rotate("+rotate6+"deg)";
         } , 30)
         setInterval(function(){
-            rotate7 +=0.1;
+            rotate7 +=0.8;
        orbit7.style.transform = "rotate("+rotate7+"deg)";
         } , 30)
         setInterval(function(){
