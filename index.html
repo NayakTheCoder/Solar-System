@@ -112,6 +112,50 @@
             border-radius: 50px;
             background-color: rgb(85, 57, 47);
         }
+        #moon{
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            left: -35%;
+            border-radius: 50px;
+            background-color: rgb(255, 255, 255);
+        }
+        #m1{
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            top: 0%;
+            left: 105%;
+            border-radius: 50px;
+            background-color: rgb(230, 175, 113);
+        }
+        #m2{
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            top: -20%;
+           left: -20%;
+            border-radius: 50px;
+            background-color: rgb(131, 90, 14);
+        }
+        #m3{
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            left: -20%;
+            top: 30%;
+            border-radius: 60px;
+            background-color: rgb(160, 146, 67);
+        }
+        #m4{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: 30%;
+             top: 85%;
+            border-radius: 50px;
+            background-color: rgb(255, 255, 255);
+        }
         #venus{
             position: absolute;
             width: 23px;
@@ -164,7 +208,7 @@
             top: -53%;
             left: -18.2%;
             border-radius: 50px;
-          border: 2px solid rgb(255, 102, 0);
+          border: 2.2px solid rgb(131, 54, 2);
         }
         #saturn{
             position: absolute;
@@ -215,6 +259,11 @@
     <p id="ring"></p>
     <p id="strip1"></p>
     <p id="strip2"></p>
+    <p id="moon"></p>
+    <p id="m1"></p>
+    <p id="m2"></p>
+    <p id="m3"></p>
+    <p id="m4"></p>
 </body>
 <script>
     let orbit1 = document.getElementById("orbit1");
@@ -236,6 +285,16 @@
     let ring = document.getElementById("ring");
     let strip1 = document.getElementById("strip1");
     let strip2 = document.getElementById("strip2");
+    let moon = document.getElementById("moon");
+    let m1 = document.getElementById("m1");
+    let m2 = document.getElementById("m2");
+    let m3 = document.getElementById("m3");
+    let m4 = document.getElementById("m4");
+    earth.append(moon);
+    jupiter.append(m1);
+    jupiter.append(m2);
+    jupiter.append(m3);
+    jupiter.append(m4);
     orbit1.append(mercury);
     orbit2.append(venus);
     orbit3.append(earth);
@@ -255,6 +314,8 @@
     let rotate6 = 0;
     let rotate7 = 0;
     let rotate8 = 0;
+    let planetrotate = 0;
+    let earthrotate = 0;
     window.onload = function(){
         setInterval(function(){
             rotate += 7;
@@ -265,8 +326,8 @@
        orbit2.style.transform = "rotate("+rotate2+"deg)";
         } , 30)
         setInterval(function(){
-            rotate3 += 4.5;
-       orbit3.style.transform = "rotate("+rotate3+"deg)";
+            rotate3 += 4.0;
+      orbit3.style.transform = "rotate("+rotate3+"deg)";
         } , 30)
         setInterval(function(){
             rotate4 += 1.5;
@@ -287,6 +348,14 @@
         setInterval(function(){
             rotate8 += 0.9;
        orbit8.style.transform = "rotate("+rotate8+"deg)";
+        } , 30)
+        setInterval(function(){
+            planetrotate += 5;
+       jupiter.style.transform = "rotate("+planetrotate+"deg)";
+        } , 30)
+        setInterval(function(){
+            earthrotate += 20;
+       earth.style.transform = "rotate("+earthrotate+"deg)";
         } , 30)
     }
 </script>
