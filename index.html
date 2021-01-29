@@ -236,6 +236,14 @@
             background: rgb(133, 4, 4);
             border-radius: 10px;
         }
+        #info{
+            position: absolute;
+            right: 3%;
+            top:-2%;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -264,8 +272,27 @@
     <p id="m2"></p>
     <p id="m3"></p>
     <p id="m4"></p>
+    <p id="info" onclick="myfunction()">?</p>
 </body>
 <script>
+    let global = false;
+    function myfunction(){
+    let speech = new SpeechSynthesisUtterance();
+    let info =document.getElementById("info")
+    speech.pitch = 100;
+    speech.volume = 2;
+    speech.rate = 0.8;
+    speech.text = "Hello! how are you ? I am doing great . this is a simple two d solar system model  . it contains all the 8 planets along with the sun . the sun is located in the center of the solar system and all planets revolve around the sun , as shown here . mercury is the closet planet to the sun , then venus , earth , mars  , jupiter , saturn , uranus and neptune .  with neptune being the eighth and the farthest planet from the sun . from the model you can see that the earth has a tiny dot revolving around the earth  , this is moon . you can also see moons revolving around jupiter . from here  , you can also see that the planet saturn has a  ring around it. this ring is composed of the dust particles  , ice and rocks . for more info check online. Thank you!";
+    speechSynthesis.speak(speech);
+    info.ondblclick = function(){
+        speechSynthesis.cancel()
+    }
+    
+    window.onload = function(){
+        speechSynthesis.pause()
+    }
+
+}
     let orbit1 = document.getElementById("orbit1");
     let orbit2 = document.getElementById("orbit2");
     let orbit3 = document.getElementById("orbit3");
